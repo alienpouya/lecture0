@@ -6,7 +6,8 @@
     <!-- This line tells the browser NOT to shrink every element but to adjust
     them on different devices accordingly (note: viewport means the screen of
     any device, be it laptop, tablet, or phone)-->
-    <meta name="viewport" content="width:device-width, initial-scale:1.0">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <style>
 
@@ -51,18 +52,9 @@
       @media (max-width:499px){
         .Versions::after {
           content: "Mobile";
-          background-color: green;
         }
-      }
-
-      @media (min-width:500px){
         body {
-          background-color: red;
-        }
-      }
-      @media (max-width:499px){
-        body {
-          background-color: green;
+          background-color: #f6f6f6;
         }
       }
 
