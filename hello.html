@@ -2,12 +2,89 @@
 <html>
   <head>
     <title>Hello World</title>
+
+    <!-- This line tells the browser NOT to shrink every element but to adjust
+    them on different devices accordingly (note: viewport means the screen of
+    any device, be it laptop, tablet, or phone)-->
+    <meta name="viewport" content="width:device-width, initial-scale:1.0">
+
+    <style>
+
+      /* CSS pseudo examples */
+      *::selection{
+        color:#444;
+        background-color: #ffc000;
+      }
+      p:first-of-type {
+        color:red;
+      }
+      .insertBefore::before {
+        content: "This is inserted using css... ";
+        color: green;
+      }
+      h1::after {
+        content: " Inserted after h1 using css";
+        background-color: yellow;
+        border-radius: 25px;
+      }
+      p + p {
+        color:grey;
+      }
+
+      /* CSS printer-friendly examples */
+      /*** Only do this when we are printing the content ***/
+      .printCredit {
+        display: none;
+      }
+      @media print {
+        .printCredit {
+          display: contents;
+        }
+      }
+
+      /* CSS responsive design examples */
+      @media (min-width:500px){
+        .Versions::after {
+          content: "Desktop";
+        }
+      }
+      @media (max-width:499px){
+        .Versions::after {
+          content: "Mobile";
+          background-color: green;
+        }
+      }
+
+      @media (min-width:500px){
+        body {
+          background-color: red;
+        }
+      }
+      @media (max-width:499px){
+        body {
+          background-color: green;
+        }
+      }
+
+    </style>
   </head>
   <body>
+    <div class="Version">
+      You are using a
+      <span class="Versions"></span>
+      to view this
+    </div>
+
+    <hr>
+
     <h1>Hello World. Learning Git!</h1>
     <p>Git Branching -- Main</p>
+    <p class="insertBefore">Just a paragraph</p>
+    <div> A div element </div>
+    <p>Just another paragraph</p>
     <!-- This is only visible in the features branch
     <p>A new feature in <i>features</i> branch</p>
     -->
+    <p class="printCredit">&copy; Copyright 2020 All Rights Reserved for Printing</p>
   </body>
 </html>
